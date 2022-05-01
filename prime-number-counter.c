@@ -16,7 +16,16 @@ is_prime_number (unsigned long long n)
 int
 main (int argc, char **argv)
 {
-  const char prime_numbers_file_name[18] = "prime-numbers.txt";
+  if (argc != 4)
+    {
+      /* TODO display help text here */
+      return EXIT_FAILURE;
+    }
+
+  const unsigned long long count_from = atoi(argv[1]);
+  const unsigned long long count_to = atoi(argv[2]);
+  
+  const char *prime_numbers_file_name = argv[3];
 
   FILE *prime_numbers_file = fopen (prime_numbers_file_name, "w");
 
@@ -26,9 +35,6 @@ main (int argc, char **argv)
                prime_numbers_file_name);
       return EXIT_FAILURE;
     }
-
-  const unsigned long long count_from = 2;
-  const unsigned long long count_to = 4000;
 
   for (unsigned long long i = count_from; i <= count_to; i++)
     {
