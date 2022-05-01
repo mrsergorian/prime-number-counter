@@ -22,9 +22,9 @@ main (int argc, char **argv)
       return EXIT_FAILURE;
     }
 
-  const unsigned long long count_from = atoi(argv[1]);
-  const unsigned long long count_to = atoi(argv[2]);
-  
+  const unsigned long long count_from = atoi (argv[1]);
+  const unsigned long long count_to = atoi (argv[2]);
+
   const char *prime_numbers_file_name = argv[3];
 
   FILE *prime_numbers_file = fopen (prime_numbers_file_name, "w");
