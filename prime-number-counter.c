@@ -1,6 +1,7 @@
 #include <stdbool.h>
 #include <stdio.h>
 #include <stdlib.h>
+#include <string.h>
 
 bool
 is_prime_number (unsigned long long n)
@@ -13,12 +14,23 @@ is_prime_number (unsigned long long n)
   return true;
 }
 
+void
+usage (void)
+{
+  fprintf (stderr, "prime-number-counter 1.0.0\n");
+  fprintf (stderr,
+           "Usage: prime-number-counter count-from count-to output-file\n\n");
+  fprintf (stderr, "  count-from - number to count from\n");
+  fprintf (stderr, "  count-to - number to count to\n");
+  fprintf (stderr, "  output-file - output file\n");
+}
+
 int
 main (int argc, char **argv)
 {
   if (argc != 4)
     {
-      /* TODO display help text here */
+      usage ();
       return EXIT_FAILURE;
     }
 
